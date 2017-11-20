@@ -1,0 +1,4 @@
+exportPattern("^[[:alpha:]]+")
+importFrom("stats", "aggregate", "cor", "kmeans", "median", "pchisq","poly")
+importFrom("apcluster","linKernel")
+import("mclust","igraph")
