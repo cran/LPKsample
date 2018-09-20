@@ -1,5 +1,5 @@
 LP.comean <-
-function(x,y,type='smooth',smooth.method='BIC'){
+function(x,y,perm=0){
   n<-length(x)
   if(length(unique(y))<=1 |length(unique(x))<=1  ){
     LP.mat<-0
@@ -13,15 +13,22 @@ function(x,y,type='smooth',smooth.method='BIC'){
     LP.mat<-cor(Tx,Ty)
   }
   matdim<-dim(LP.mat)
-
-  df0<-nrow(LP.mat)*ncol(LP.mat)
-
-  if(type=='smooth'){
-     LP.mat<-LP.smooth(c(LP.mat),n,method=smooth.method) 
-     df0<-sum(LP.mat!=0) 
-  }
   
-   pval<-pchisq(n*sum(LP.mat^2),df=df0,lower.tail=FALSE)
+  if(perm==0){
+     df0<-nrow(LP.mat)*ncol(LP.mat)
+     pval<-pchisq(n*sum(LP.mat^2),df=df0,lower.tail=FALSE)
+   }else if(perm>=1){
+      ostat<-n*sum(LP.mat^2)
+      pstat<-rep(0,perm)
+      for(i in 1:perm){
+         x0<-sample(x,replace=F)
+         Tx0<-LP.Poly(x0,m)
+         LP.mat0<-cor(Tx0,Ty)
+         pstat[i]<-n*sum(LP.mat0^2)
+      }
+      edfun<-ecdf(pstat)
+      pval<-1-edfun(ostat)
+   }
 
    out$LPINFOR<-sum(LP.mat^2)
    out$p.val<-pval

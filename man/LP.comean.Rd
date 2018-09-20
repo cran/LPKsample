@@ -1,19 +1,17 @@
 \name{LP.comean}
 \alias{LP.comean}
-\alias{LP.smooth}
 \title{Function to find LP-comeans}
 \description{
 The function computes the LP comeans between \code{x} and \code{y}.
 }
 \usage{
-LP.comean(x, y, type = "smooth", smooth.method = "BIC")
+LP.comean(x, y, perm=0)
 }
 
 \arguments{
   \item{x}{vector, observations of an univariate random variable}
   \item{y}{vector, observations of another univariate random variable}
-  \item{type}{set to "smooth" to enable smoothing of LP comeans}
-  \item{smooth.method}{\code{"AIC"} or \code{"BIC"}; Method used for smoothing the LP comeans }
+  \item{perm}{ Number of permutations for approximating p-value, set to 0 to use asymptotic p-value. }
 }
 
 \value{
@@ -22,7 +20,7 @@ LP.comean(x, y, type = "smooth", smooth.method = "BIC")
   \item{p.val}{Test p-value}
   \item{LP.matrix}{LP comean matrix}
 }
-\references{Mukhopadhyay, S. and Wang, K. (2017), "A Nonparametric Approach to High-dimensional K-sample Comparison Problem".
+\references{Mukhopadhyay, S. and Wang, K. (2018), "A Nonparametric Approach to High-dimensional K-sample Comparison Problem".
 
 Parzen, E. and Mukhopadhyay, S. (2012)  "Modeling, Dependence, Classification, United Statistical Science, Many Cultures".
 }
@@ -42,3 +40,4 @@ Parzen, E. and Mukhopadhyay, S. (2012)  "Modeling, Dependence, Classification, U
 }
 
 \keyword{ GLP other functions }
+

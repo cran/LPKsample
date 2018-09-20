@@ -8,12 +8,12 @@ Similarity matrix based on eLP basis and polynomial kernel
 Given data matrix \eqn{X} and eLP order \eqn{k}, this function generate the similarity matrix \eqn{W} for graph analysis.
 }
 \usage{
-W.Gen(X, k, c = 0.5)
+W.Gen(X, k, c.poly = 0.5)
 }
 \arguments{
   \item{X}{A \eqn{n}-by-\eqn{d} matrix of the observations}
   \item{k}{An integer, order of LP component}
-  \item{c}{Numeric, parameter for polynomial kernel }
+  \item{c.poly}{Numeric, parameter for polynomial kernel }
 }
 
 \value{
@@ -21,7 +21,7 @@ W.Gen(X, k, c = 0.5)
 }
 
 \references{
-Mukhopadhyay, S. and Wang, K. (2017), "A Nonparametric Approach to High-dimensional K-sample Comparison Problem"
+Mukhopadhyay, S. and Wang, K. (2018), "A Nonparametric Approach to High-dimensional K-sample Comparison Problem"
 }
 \author{ Mukhopadhyay, S. and Wang, K.}
 

@@ -14,7 +14,7 @@
 Maintainer: Kaijun Wang <kaijun.wang@temple.edu>
 }
 \references{
-Mukhopadhyay, S. and Wang, K. (2017), "A Nonparametric Approach to High-dimensional K-sample Comparison Problem".
+Mukhopadhyay, S. and Wang, K. (2018), "A Nonparametric Approach to High-dimensional K-sample Comparison Problem".
 
 Mukhopadhyay, S. (2017+), "Unified Statistical Theory of Spectral Graph Analysis".
 
