@@ -21,7 +21,7 @@ W.Gen(X, k, c.poly = 0.5)
 }
 
 \references{
-Mukhopadhyay, S. and Wang, K. (2018), "A Nonparametric Approach to High-dimensional K-sample Comparison Problem"
+Mukhopadhyay, S. and Wang, K. (2020), "A Nonparametric Approach to High-dimensional K-sample Comparison Problem", arXiv:1810.01724.
 }
 \author{ Mukhopadhyay, S. and Wang, K.}
 

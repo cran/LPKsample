@@ -20,7 +20,7 @@ LP.comean(x, y, perm=0)
   \item{p.val}{Test p-value}
   \item{LP.matrix}{LP comean matrix}
 }
-\references{Mukhopadhyay, S. and Wang, K. (2018), "A Nonparametric Approach to High-dimensional K-sample Comparison Problem".
+\references{Mukhopadhyay, S. and Wang, K. (2020), "A Nonparametric Approach to High-dimensional K-sample Comparison Problem", arXiv:1810.01724.
 
 Parzen, E. and Mukhopadhyay, S. (2012)  "Modeling, Dependence, Classification, United Statistical Science, Many Cultures".
 }

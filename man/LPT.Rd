@@ -26,7 +26,7 @@ A vector containing the elements of \eqn{k}-th order component of the eLP transf
 Or a matrix with columns of \eqn{1} to \eqn{m}-th order component of the eLP transformation on \eqn{x} (LP.Poly);
 }
 \references{
-Mukhopadhyay, S. and Wang, K. (2018), "A Nonparametric Approach to High-dimensional K-sample Comparison Problem".
+Mukhopadhyay, S. and Wang, K. (2020), "A Nonparametric Approach to High-dimensional K-sample Comparison Problem", arXiv:1810.01724.
 
 Mukhopadhyay, S. and Parzen, E. (2014) "LP Approach to Statistical Modeling", arXiv:1405.2601. 
 }

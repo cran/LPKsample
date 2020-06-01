@@ -10,35 +10,41 @@ This function performs the GLP multivariate K-sample learning.
 }
 \usage{
 GLP(X,y,m.max=4,components=NULL,alpha=0.05,c.poly=0.5,clust.alg='kmeans',perm=0,
-    multiple.comparison=TRUE,return.LPT=FALSE,return.clust=FALSE)
+	combine.criterion='pvalue',multiple.comparison=TRUE,
+	compress.algorithm=FALSE,nbasis=8, return.LPT=FALSE,return.clust=FALSE)
 }
 
 \arguments{
-  \item{X}{ A \eqn{n}-by-\eqn{d} matrix of the observations, the observations should be grouped by their respective classes}
-  \item{y}{ A length \eqn{n} vector indicating the sample class}
-  \item{m.max}{ An integer, maximum order of LP component to investigate, default: 4 }
+  \item{X}{ A \eqn{n}-by-\eqn{d} matrix of the observations, the observations should be grouped by their respective classes.}
+  \item{y}{ A length \eqn{n} vector indicating the sample class.}
+  \item{m.max}{ An integer, maximum order of LP component to investigate, default: 4. }
   \item{components}{A vector specifying which components to test. If provided with any value other than NULL, the test will only examine the components mentioned in this argument, ignoring the m.max settings.}
-  \item{alpha}{ Numeric, confidence level \eqn{\alpha} , default: 0.05}
-  \item{c.poly}{ Numeric, parameter for polynomial kernel, default: 0.5 }
+  \item{alpha}{ Numeric, confidence level \eqn{\alpha} , default: 0.05.}
+  \item{c.poly}{ Numeric, parameter for polynomial kernel, default: 0.5. }
   \item{perm}{ Number of permutations for approximating p-value, set to 0 to use asymptotic p-value. }
+  \item{combine.criterion}{How to obtain the overall testing result based on the component-wise results; 'pvalue' uses Fisher's method to combine the p-values from each component; 'kernel' computes an overall kernel \eqn{W} based on the significant components and run the LP graph test on the \eqn{W}.}
   \item{multiple.comparison}{Set to TRUE to use adjustment for multiple comparisons when determining which components are significant.}
-  \item{clust.alg}{ \code{"mclust"} or \code{"kmeans"}; algorithm used for clustering in graph community detection }
-  \item{return.LPT}{ logical, whether or not to return the data driven covariate matrix, default: FALSE}
-  \item{return.clust}{ logical, whether or not to return the class labels assigned by graph community detection, default: FALSE}
+  \item{compress.algorithm}{Use the smooth compression of Laplacian spectra for testing the null hypothesis. Recommended for large \eqn{n}. }
+  \item{nbasis}{Number of bases used for approximation when \code{compress.algorithm=TRUE}.}
+  \item{clust.alg}{ \code{"mclust"} or \code{"kmeans"}; algorithm used for clustering in graph community detection. }
+  \item{return.LPT}{ logical, whether or not to return the data driven covariate matrix, default: FALSE.}
+  \item{return.clust}{ logical, whether or not to return the class labels assigned by graph community detection, default: FALSE.}
 }
 
 \value{
  A list containing the following items:
-   \item{GLP}{Overall GLP statistics}
-   \item{pval}{Overall P-value}
-   \item{table}{The GLP component table indicating the significance of each component}
-   \item{components}{significant eLP components for the data set}
-   \item{LPT}{(optional) matrix of data driven covariates}
-   \item{clust}{(optional) class labels assigned by graph community detection}
+   \item{GLP}{Overall GLP statistics.}
+   \item{pval}{Overall P-value.}
+   \item{table}{The GLP component table indicating the significance of each component.}
+   \item{components}{significant eLP components for the data set.}
+   \item{LPT}{(optional) matrix of data driven covariates.}
+   \item{clust}{(optional) class labels assigned by graph community detection.}
 }
 
 \references{
-Mukhopadhyay, S. and Wang, K. (2018), "A Nonparametric Approach to High-dimensional K-sample Comparison Problem".
+Mukhopadhyay, S. and Wang, K. (2020), "A Nonparametric Approach to High-dimensional K-sample Comparison Problem", arXiv:1810.01724.
+
+Mukhopadhyay, S. and Wang, K. (2020).  "Towards a unified statistical theory of spectralgraph analysis", arXiv:1901.07090,
 }
 \author{ Mukhopadhyay, S. and Wang, K.}
 
